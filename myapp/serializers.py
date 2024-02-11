@@ -100,3 +100,16 @@ class StudentLeaveSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student_leave
         fields = '__all__'
+        
+        
+class AttendanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Attendence
+        fields = ['subject_id', 'attendence_data', 'session_year_id', 'created_at', 'updated_at']
+        
+class AttendanceReportSerializer(serializers.ModelSerializer):
+    
+
+    class Meta:
+        model = Attendence_Report
+        fields = ['student_id', 'attendence_id', 'created_at', 'updated_at']

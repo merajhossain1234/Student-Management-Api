@@ -15,5 +15,8 @@ urlpatterns = [
     path("feedback_create/<int:pk>/",FeedbackCreate.as_view(),name="create_feedback"),
     path("feedback_history/<int:pk>/",FeedbackHistory.as_view(),name="feed_back_history"),
     
+    #view all subjects of staff using id and get the all session year
+    path("subjects_and_session_year/<int:pk>/",SubjectsAndSessionYear.as_view(),name="subjects_and_session_year"),
+    
     
 ]

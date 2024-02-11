@@ -73,3 +73,16 @@ class StudentLeaveAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Student_leave, StudentLeaveAdmin)
+
+
+class AttendanceAdmin(admin.ModelAdmin):
+    list_display = ['id','subject_id', 'attendence_data', 'session_year_id', 'created_at', 'updated_at']
+
+admin.site.register(Attendence, AttendanceAdmin)
+
+
+class AttendanceReportAdmin(admin.ModelAdmin):
+    list_display = ['id','student_id', 'attendence_id', 'created_at', 'updated_at']
+
+
+admin.site.register(Attendence_Report, AttendanceReportAdmin)

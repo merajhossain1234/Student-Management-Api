@@ -69,6 +69,19 @@ class FeedbackHistory(APIView):
         
         return Response(serializer.data, status=status.HTTP_201_CREATED)
     
+class SubjectsAndSessionYear(APIView):
+    def get(self, request,pk=None):
+        staff=Staff.objects.get(id=pk)
+        subjects=Subject.objects.filter(staff=staff)
+        subjectserializer=SubjectSerializer(subjects,many=True)
+        sessionyear=Session_Year.objects.all()
+        sessionyearserializer=SessionyearSerializer(sessionyear,many=True)
+        data={
+            "subjects":subjectserializer.data,
+            "sessionyear":sessionyearserializer.data
+        }
+        return Response(data, status=status.HTTP_201_CREATED)
+    
     
         
     
